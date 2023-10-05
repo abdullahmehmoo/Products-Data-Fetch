@@ -1,0 +1,21 @@
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #3498db;
+            /* Blue background color */
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            /* White text color */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            /* Darker blue background color on hover */
+        }

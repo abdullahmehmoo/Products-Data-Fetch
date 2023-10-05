@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            /* Light gray background */
+            font-family: Arial, sans-serif;
+            /* Choose a suitable font */
+        }
+
+        .allProducts {
+            font-size: 30px;
+            color: #2d3e50;
+            /* Dark blue text color */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .item {
+            border: 2px solid #3498db;
+            /* Blue border */
+            width: 45%;
+            max-width: 350px;
+            background-color: #ffffff;
+            /* White background */
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: contain;
+            transition: all ease 0.45s;
+        }
+
+        .item img:hover {
+            transform: scale(0.95);
+
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+            /* Dark text color */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-desc {
+            font-size: 16px;
+            color: #555;
+            /* Slightly lighter text color */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        .productPrice {
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .item {
+                width: 100%;
+            }
+
+            .product-desc {
+                font-size: 26px;
+            }
+
+            .productPrice {
+                font-size: 20px;
+            }
+        }
+
+
+        button {
+            padding: 15px;
+            background: white;
+            border: 2px solid gray;
+            border-radius: 7px;
+        }
+
+        button a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{>header}}
+
+    <h1 class="allProducts">All Products</h1>
+
+    <div class="products">
+        <!-- Example data, replace with your dynamic data -->
+        {{#each products}}
+        <div class="item">
+            <img src="{{this.image}}" alt="productImg" class="productImg">
+            <h2 class="product-title">{{this.title}}</h2>
+            <p class="product-desc">{{this.description}}</p>
+
+            <p class="productPrice"><b>Price: $</b>{{this.price}}</p>
+            <button><a href="/products/{{this.id}}">See Product</a></button>
+        </div>
+        {{/each}}
+
+    </div>
+
+    <script>
+        const searchBar = document.getElementById('search').style.display = 'none';
+
+    </script>
+</body>
+
+</html>
