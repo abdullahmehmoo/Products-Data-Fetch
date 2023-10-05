@@ -5,6 +5,10 @@ Fetch data from REST APIs of the fakestoreapi and show using Handlebars, Axios a
 npm install
 ```
 
-> npx nodemon app.js
+```
+npx nodemon app.js
+```
 
-> http://localhost:3000
+```
+http://localhost:3000
+```
