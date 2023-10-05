@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - {{products.title}}</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 28px;
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        .img {
+            margin-top: 20px;
+        }
+
+        .productImg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #007BFF;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <div class="img">
+            <img src="{{products.image}}" alt="Product Image" class="productImg">
+        </div>
+        <div class="title">
+            <h2>{{products.title}}</h2>
+        </div>
+        <div class="desc">
+            <p>{{products.description}}</p>
+        </div>
+        <div class="price"><b>Price: ${{products.price}}</b></div>
+    </div>
+</body>
+
+</html>
